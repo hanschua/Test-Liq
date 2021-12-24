@@ -1,0 +1,12 @@
+<changeSet id="1640357817576" author="h">
+  <createTable tableName="user">
+    <column name="id" type="varchar(36)"><!-- UUID -->
+      <constraints primaryKey="true" nullable="false"/>
+    </column>
+    <column name="firstname" type="varchar(100)"/>
+      <constraints nullable="false"/>
+    <column name="lastname" type="varchar(100)">
+      <constraints nullable="false"/>
+    </column>
+  </createTable>
+</changeSet>

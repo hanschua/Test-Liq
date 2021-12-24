@@ -1,0 +1,47 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "org.liquibase:liquibase-gradle-plugin:2.1.1"
+  }
+}
+
+apply plugin: 'org.liquibase.gradle'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  liquibaseRuntime 'org.liquibase:liquibase-core:4.6.2'
+  liquibaseRuntime 'info.picocli:picocli:4.6.2'
+  liquibaseRuntime 'javax.xml.bind:jaxb-api:2.3.1'
+
+  liquibaseRuntime 'org.postgresql:postgresql:42.3.1'
+
+  def logbackV = '1.2.3'
+  liquibaseRuntime "ch.qos.logback:logback-core:$logbackV"
+  liquibaseRuntime "ch.qos.logback:logback-classic:$logbackV"
+}
+
+liquibase {
+  activities {
+    main {
+      changeLogFile 'src/main/db/changelogs.xml'
+      url project.ext.mainUrl
+      username project.ext.mainUsername
+      password project.ext.mainPassword
+    }
+    diffMain {
+      changeLogFile 'src/main/db/changelogs.xml'
+      url project.ext.mainUrl
+      username project.ext.mainUsername
+      password project.ext.mainPassword     
+    }
+  }
+  runList = project.ext.runList
+}
