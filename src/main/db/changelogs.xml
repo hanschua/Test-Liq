@@ -3,11 +3,5 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
-  <include file="" relativeToChangelogFile="true" />  
-  <changeSet author="h" id="1">
-    <sqlFile path="src/main/db/create-table-sql-01-10-2015.sql"/>
-  </changeSet>
-  <changeSet author="h" id="2">
-    <sqlFile path="src/main/db/create-table-sql-02-10-2015.sql"/>
-  </changeSet>
+  <include file="2021-12-24 changeset.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
