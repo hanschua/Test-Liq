@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
-  <include file="2021-12-24 changeset.xml" relativeToChangelogFile="true" />
+  <include file="Initial-Tables.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
